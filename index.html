@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!--
+  CONCEITO: "Respiração". A página inspira e expira como o treino de Systema.
+  COR: marinho profundo (#0C111B / #1A2233) do site atual + o vermelho do urso (#E01F27) usado com coragem,
+       uma seção clara (#EEF1F6) pra quebrar o ritmo.
+  TIPO: Oswald (identidade atual da marca) nos títulos, Manrope no texto.
+  ASSINATURA: o anel vermelho que respira (hero 3D com o urso e os 54 cards orbitando, e a seção dos 4 elementos
+       em que o anel inspira e expira com a rolagem).
+  Conteúdo: 100% do site atual (systemaaraujo.com.br + cards.html). Nada inventado.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systema Araújo | Defesa pessoal russa, linhagem Vasiliev</title>
+<meta name="description" content="Systema Araújo: defesa pessoal baseada no Systema russo (linhagem Vasiliev). Vídeos, shorts, os cards 54 Dias Mais Preparado e seminários com o instrutor internacional Rodrigo Araujo.">
+<meta property="og:title" content="Systema Araújo | Defesa pessoal russa">
+<meta property="og:description" content="Defesa pessoal russa que funciona na vida real. Linhagem Vasiliev.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.ytimg.com/vi/At1YYkBpLL0/maxresdefault.jpg">
+<meta name="theme-color" content="#0C111B">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C111B; --navy:#1A2233; --navy-deep:#111826; --navy-soft:#212C41;
+  --red:#E01F27; --red-hot:#FF3B42; --red-deep:#A8141B;
+  --text:#EEF1F6; --muted:#9AA5B8; --line:rgba(255,255,255,.1);
+  --paper:#EEF1F6; --paper-ink:#141B29;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--ink);color:var(--text);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,.oz{font-family:"Oswald",sans-serif;text-transform:uppercase;line-height:1;letter-spacing:.01em}
+:focus-visible{outline:2px solid var(--red-hot);outline-offset:3px}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+section{position:relative}
+.rot{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.32em;font-size:.78rem;color:var(--red);font-weight:600;display:flex;align-items:center;gap:12px}
+.rot::before{content:"";width:28px;height:2px;background:currentColor}
+.tit{font-size:clamp(2.4rem,6.4vw,5.2rem);font-weight:700;margin:18px 0 22px}
+.lead{color:var(--muted);font-size:clamp(1.02rem,1.4vw,1.15rem);max-width:60ch}
+.lead strong,.txt strong{color:var(--text)}
+/* grão nas seções escuras */
+.grao::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grao>*{position:relative;z-index:1}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-weight:600;font-size:.95rem;
+  min-height:52px;padding:0 26px;border-radius:4px;border:2px solid transparent;transition:transform .35s var(--ease),background .25s,border-color .25s,color .25s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-hot);transform:translateY(-2px)}
+.btn-line{border-color:rgba(255,255,255,.28)}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn svg{width:18px;height:18px}
+.seta{display:inline-flex;align-items:center;gap:10px;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--red);font-weight:600;padding:8px 0;min-height:44px}
+.seta span{transition:transform .35s var(--ease)}
+.seta:hover span{transform:translateX(6px)}
+
+/* ===== HEADER ===== */
+#hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .35s,border-color .35s,height .35s;border-bottom:1px solid transparent}
+#hdr.solido{background:rgba(12,17,27,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px;transition:height .35s}
+#hdr.solido .nav{height:64px}
+.marca{display:flex;align-items:center;gap:12px;font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.12rem;line-height:1.1}
+.marca img{width:42px;height:42px;border-radius:50%}
+.marca small{display:block;font-family:"Manrope",sans-serif;font-size:.6rem;letter-spacing:.22em;color:var(--muted);font-weight:600}
+.links{display:flex;gap:26px}
+.links a{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.86rem;color:var(--muted);transition:color .2s;padding:10px 0;position:relative}
+.links a:hover{color:#fff}
+.links a.quente{color:var(--red-hot)}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.links a:hover::after{transform:scaleX(1)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:.85rem}
+.menu-b{display:none;width:48px;height:48px;align-items:center;justify-content:center}
+.menu-b span,.menu-b span::before,.menu-b span::after{display:block;width:24px;height:2px;background:#fff;position:relative;transition:transform .3s,background .3s}
+.menu-b span::before,.menu-b span::after{content:"";position:absolute;left:0}
+.menu-b span::before{top:-7px}.menu-b span::after{top:7px}
+body.menu-on .menu-b span{background:transparent}
+body.menu-on .menu-b span::before{transform:translateY(7px) rotate(45deg)}
+body.menu-on .menu-b span::after{transform:translateY(-7px) rotate(-45deg)}
+#painel{position:fixed;inset:0;z-index:49;background:rgba(12,17,27,.98);display:flex;flex-direction:column;justify-content:flex-end;padding:100px var(--gut) 40px;gap:4px;
+  transform:translateY(100%);transition:transform .5s var(--ease);visibility:hidden}
+body.menu-on #painel{transform:none;visibility:visible}
+#painel a{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:2rem;font-weight:600;padding:8px 0;border-bottom:1px solid var(--line)}
+#painel a.quente{color:var(--red-hot)}
+#painel .btn{margin-top:22px}
+
+/* ===== HERO ===== */
+#top{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+  background:radial-gradient(120% 80% at 75% 35%,#1E2940 0%,var(--navy-deep) 45%,var(--ink) 100%)}
+#cena{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-fb{position:absolute;right:8%;top:50%;width:min(36vw,440px);transform:translateY(-55%);display:none}
+.hero-fb img{border-radius:50%;box-shadow:0 0 0 10px rgba(224,31,39,.15),0 40px 80px -20px rgba(0,0,0,.7);animation:respira 6s ease-in-out infinite}
+.sem-3d .hero-fb{display:block}
+@keyframes respira{0%,100%{transform:scale(.96)}50%{transform:scale(1.03)}}
+.hero-c{position:relative;z-index:2;padding-top:120px;padding-bottom:clamp(36px,7vh,80px);pointer-events:none}
+.hero-c a,.hero-c button{pointer-events:auto}
+.yt-linha{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;color:#FFD7D9;margin-bottom:22px}
+.yt-linha i{width:26px;height:18px;border-radius:5px;background:var(--red);display:grid;place-items:center}
+.yt-linha i::after{content:"";border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.h1{font-size:clamp(4rem,10.5vw,9.6rem);font-weight:700;line-height:.86;letter-spacing:-.005em}
+.h1 .l1,.h1 .l2{display:block}
+.h1 .l2{color:var(--red);margin-top:.1em}
+.h1 .lw{display:inline-block;overflow:hidden;vertical-align:top;padding-top:.14em;margin-top:-.14em}
+.h1 .lt{display:inline-block}
+.tag{max-width:30ch;font-size:clamp(1.08rem,1.8vw,1.35rem);color:#C9D1DE;margin:22px 0 30px;line-height:1.45}
+.tag strong{color:#fff}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.nums{display:flex;gap:clamp(22px,4vw,48px);margin-top:36px;flex-wrap:wrap}
+.nums b{display:block;font-family:"Oswald",sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1;font-weight:600}
+.nums span{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:700}
+.destaque{position:absolute;right:var(--gut);bottom:clamp(36px,7vh,80px);z-index:3;width:min(360px,30vw);text-align:left;border-radius:6px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 30px 60px -25px rgba(0,0,0,.9);background:#000;transition:transform .45s var(--ease)}
+.destaque:hover{transform:translateY(-6px)}
+.destaque img{aspect-ratio:16/9;object-fit:cover;width:100%;height:auto;transition:transform .6s var(--ease),opacity .3s}
+.destaque:hover img{transform:scale(1.05)}
+.destaque .rodape-v{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--navy-deep)}
+.destaque .rodape-v b{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;display:block}
+.destaque .rodape-v small{color:var(--muted);font-size:.78rem}
+.play{width:44px;height:44px;flex:none;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:transform .3s var(--ease)}
+.play::after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.destaque:hover .play{transform:scale(1.1)}
+.rolar{position:absolute;left:50%;bottom:18px;z-index:2;transform:translateX(-50%);font-family:"Oswald",sans-serif;font-size:.7rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.rolar::after{content:"";width:1px;height:34px;background:linear-gradient(var(--red),transparent);animation:desce 2.2s ease-in-out infinite}
+@keyframes desce{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ===== OS 4 ELEMENTOS (anel que respira) ===== */
+#elementos{background:var(--ink);overflow:hidden}
+.resp-pin{height:100svh;display:grid;place-items:center;position:relative}
+.anel{position:absolute;left:50%;top:50%;width:min(78vmin,640px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(.6);
+  border:2px solid var(--red);box-shadow:0 0 0 1px rgba(224,31,39,.25),inset 0 0 120px rgba(224,31,39,.18);will-change:transform}
+.anel::before{content:"";position:absolute;inset:9%;border-radius:50%;border:1px dashed rgba(224,31,39,.35)}
+.anel::after{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(255,255,255,.06)}
+.resp-topo{position:absolute;top:clamp(80px,13vh,130px);left:0;right:0;text-align:center;padding:0 var(--gut)}
+.resp-topo .rot{justify-content:center}
+.resp-topo p{color:var(--muted);margin-top:10px;font-size:.98rem}
+.fase{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:"Oswald",sans-serif;font-size:.78rem;letter-spacing:.5em;text-transform:uppercase;color:var(--red-hot);margin-top:calc(min(39vmin,320px) * -1 - 20px)}
+.els{position:relative;width:min(92vw,900px);height:44vh;display:grid;place-items:center;text-align:center}
+.el{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;padding:0 8px}
+.el .n{font-family:"Oswald",sans-serif;color:var(--red);font-size:.95rem;letter-spacing:.3em}
+.el h3{font-size:clamp(3rem,11vw,8.4rem);font-weight:700;margin:10px 0 18px}
+.el p{max-width:34ch;font-size:clamp(1.05rem,1.8vw,1.3rem);color:#D3DAE5}
+.el small{display:block;margin-top:14px;color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.resp-barra{position:absolute;bottom:clamp(28px,6vh,60px);left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.resp-barra i{width:46px;height:3px;background:rgba(255,255,255,.14);overflow:hidden;position:relative}
+.resp-barra i b{position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left}
+.resp-fim{position:absolute;bottom:clamp(60px,11vh,110px);left:0;right:0;text-align:center;font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:clamp(1rem,2vw,1.4rem);letter-spacing:.08em;opacity:0;padding:0 var(--gut)}
+/* sem animação: os 4 elementos em grade */
+.estatico .resp-pin{height:auto;padding:110px 0 90px;display:block}
+.estatico .anel,.estatico .fase,.estatico .resp-barra{display:none}
+.estatico .resp-topo{position:static;margin-bottom:30px}
+.estatico .els{height:auto;width:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;padding:0 var(--gut)}
+.estatico .el{position:static;opacity:1}
+.estatico .el h3{font-size:2.6rem}
+.estatico .resp-fim{position:static;opacity:1;margin-top:40px}
+
+/* ===== SOBRE ===== */
+#sobre{background:var(--navy-deep);padding:clamp(90px,14vw,170px) 0 0;overflow:hidden}
+.sobre-g{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.foto-r{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;clip-path:circle(22% at 50% 42%);will-change:clip-path}
+.foto-r img{width:100%;height:115%;object-fit:cover;object-position:50% 20%;will-change:transform}
+.foto-r::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,17,27,.85))}
+.foto-leg{position:absolute;left:22px;bottom:20px;z-index:2;font-family:"Oswald",sans-serif;text-transform:uppercase}
+.foto-leg b{display:block;font-size:1.8rem;font-weight:700}
+.foto-leg span{color:var(--red-hot);letter-spacing:.12em;font-size:.85rem}
+.txt p{color:var(--muted);font-size:1.1rem;margin-bottom:26px}
+.selos{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:30px}
+.selos div{background:var(--navy-deep);padding:18px 18px 16px;transition:background .3s}
+.selos div:hover{background:var(--navy)}
+.selos b{display:block;font-family:"Oswald",sans-serif;font-size:1.5rem;text-transform:uppercase;line-height:1.05}
+.selos span{font-size:.82rem;color:var(--muted)}
+blockquote{border-left:3px solid var(--red);padding:4px 0 4px 20px;font-size:1.18rem;color:#D3DAE5;font-style:normal;max-width:44ch}
+.artes{margin-top:clamp(70px,10vw,120px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;white-space:nowrap;overflow:hidden}
+.artes-t{display:inline-flex;gap:46px;will-change:transform}
+.artes-t span{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:clamp(2.2rem,6vw,4.6rem);font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(238,241,246,.35)}
+.artes-t span.s{color:var(--red);-webkit-text-stroke:0}
+.artes-leg{text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:16px 0 40px}
+
+/* ===== CARDS 54 DIAS ===== */
+#cards{overflow:hidden;background:linear-gradient(160deg,#171717 0%,var(--navy-deep) 55%,#251416 100%);padding:clamp(90px,12vw,150px) 0 clamp(80px,10vw,130px)}
+.cards-g{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,70px);align-items:center;min-height:min(86vh,760px)}
+.baralho{position:relative;height:min(64vh,540px);perspective:1400px}
+.baralho-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .5s var(--ease)}
+.carta{position:absolute;left:50%;top:50%;width:min(240px,46vw);aspect-ratio:555/807;margin-left:calc(min(240px,46vw) / -2);margin-top:calc(min(240px,46vw) * -.727);
+  border-radius:12px;overflow:hidden;box-shadow:0 30px 50px -22px rgba(0,0,0,.95);border:1px solid rgba(255,255,255,.12);will-change:transform;cursor:zoom-in;transition:box-shadow .3s}
+.carta img{width:100%;height:100%;object-fit:cover}
+.carta:hover{box-shadow:0 40px 70px -20px rgba(224,31,39,.55)}
+.brilho-c{position:absolute;inset:-30%;background:radial-gradient(circle,rgba(224,31,39,.22),transparent 60%);filter:blur(10px);pointer-events:none}
+.pontos{list-style:none;display:grid;gap:12px;margin:26px 0 30px}
+.pontos li{display:flex;gap:14px;color:#C7CFDD}
+.pontos li::before{content:"";flex:none;width:10px;height:10px;margin-top:8px;border:2px solid var(--red);transform:rotate(45deg)}
+.preco{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.preco b{font-family:"Oswald",sans-serif;font-size:clamp(3rem,6vw,4.4rem);line-height:1;color:#fff}
+.preco span{color:var(--muted);font-size:.95rem}
+.aviso-d{color:var(--muted);font-size:.85rem;margin-top:14px}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(70px,9vw,110px);border-top:1px solid var(--line)}
+.passo{padding:28px 24px 10px 0;position:relative}
+.passo b{font-family:"Oswald",sans-serif;font-size:4.2rem;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--red);display:block}
+.passo h4{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.5rem;margin:12px 0 6px}
+.passo p{color:var(--muted);font-size:.98rem}
+.partes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:60px}
+.parte{border:1px solid var(--line);padding:26px;border-radius:4px;background:rgba(12,17,27,.4);transition:border-color .3s,transform .45s var(--ease)}
+.parte:hover{border-color:var(--red);transform:translateY(-4px)}
+.parte h4{font-family:"Oswald",sans-serif;text-transform:uppercase;color:var(--red-hot);font-size:1.3rem;margin-bottom:8px;letter-spacing:.04em}
+.parte p{color:#C7CFDD}
+.temas{margin-top:60px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.temas h3{font-size:clamp(1.8rem,3vw,2.4rem)}
+.temas ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.temas li{border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:3px;font-weight:600;font-size:.92rem}
+.cards-cta{margin-top:56px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:30px;border:1px solid rgba(224,31,39,.5);border-radius:4px;background:rgba(224,31,39,.07)}
+.cards-cta p{max-width:58ch;color:#C7CFDD;font-size:.95rem}
+.cards-cta p b{color:#fff}
+.faq{margin-top:60px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
+.faq h3{font-size:clamp(1.8rem,3vw,2.4rem)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:700;font-size:1.05rem;position:relative;min-height:48px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:translateY(-70%) rotate(45deg);transition:transform .35s var(--ease)}
+details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+details p{color:var(--muted);padding:0 0 22px;max-width:62ch}
+
+/* ===== INSTITUCIONAL ===== */
+#institucional{background:var(--ink);padding:clamp(90px,12vw,150px) 0}
+.inst-topo{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:46px}
+.video-g{position:relative;border-radius:28px;overflow:hidden;transform:scale(.78);transform-origin:center top;will-change:transform,border-radius;background:#000;box-shadow:0 40px 90px -40px rgba(0,0,0,.9)}
+.video-g::before{content:"";display:block;padding-top:56.25%}
+.video-g>img,.video-g iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.video-g>img{transition:transform .7s var(--ease),filter .4s}
+.video-g:hover>img{transform:scale(1.03)}
+.video-g .grande{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:96px;height:96px;z-index:2}
+.video-g .grande::after{border-left-width:26px;border-top-width:16px;border-bottom-width:16px;margin-left:7px}
+.video-g .grande::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid rgba(224,31,39,.6);animation:pulso 2.4s ease-out infinite}
+@keyframes pulso{from{transform:scale(.85);opacity:1}to{transform:scale(1.5);opacity:0}}
+.etq{position:absolute;top:18px;left:18px;z-index:2;background:var(--red);color:#fff;font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem;padding:6px 12px;border-radius:3px;font-weight:600}
+
+/* ===== PATROCÍNIO (claro) ===== */
+#patrocinadores{background:var(--paper);color:var(--paper-ink);padding:clamp(80px,10vw,130px) 0}
+#patrocinadores .lead{color:#4A556A}
+.patro-g{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.dpa{display:flex;flex-direction:column;align-items:flex-start;gap:18px;background:var(--navy);color:var(--text);padding:38px;border-radius:4px;perspective:800px;transition:box-shadow .4s;transform-style:preserve-3d}
+.dpa:hover{box-shadow:0 30px 60px -25px rgba(224,31,39,.55)}
+.dpa img{height:62px;width:auto}
+.dpa .t{color:var(--muted);font-weight:700}
+.dpa .seta{color:var(--red-hot)}
+.nota-p{margin-top:22px;color:#4A556A}
+.nota-p a{color:var(--paper-ink);font-weight:800;border-bottom:2px solid var(--red);padding:6px 0}
+
+/* ===== VÍDEOS ===== */
+#videos{background:var(--navy-deep);padding:clamp(90px,12vw,150px) 0}
+.cab{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.cab .tit{margin-bottom:0}
+.lista-v{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:stretch}
+.lista-v .video-g{transform:none;border-radius:6px}
+.lista-lado{display:flex;flex-direction:column;justify-content:space-between;gap:16px;border:1px solid var(--line);border-radius:6px;padding:28px}
+.lista-lado h3{font-size:2rem}
+.lista-lado p{color:var(--muted)}
+.mini-v{display:flex;gap:14px;align-items:center;text-align:left;padding:10px;margin:0 -10px;border-radius:6px;transition:background .3s}
+.mini-v:hover{background:rgba(255,255,255,.05)}
+.mini-v img{width:140px;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:4px;flex:none}
+.mini-v b{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.05rem;line-height:1.15;display:block}
+.mini-v small{color:var(--muted)}
+
+/* ===== SHORTS (coverflow 3D) ===== */
+#shorts{background:var(--ink);padding:clamp(90px,12vw,150px) 0 clamp(70px,9vw,110px);overflow:hidden}
+.palco{position:relative;height:min(78vh,640px);perspective:1300px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;margin-top:10px}
+.palco:active{cursor:grabbing}
+.short{position:absolute;left:50%;top:50%;width:min(300px,62vw);aspect-ratio:9/16;max-height:100%;border-radius:14px;overflow:hidden;background:var(--navy);
+  border:1px solid var(--line);box-shadow:0 40px 70px -30px rgba(0,0,0,.95);will-change:transform,opacity}
+.short img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.short .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,11,18,.94));display:flex;flex-direction:column;justify-content:flex-end;padding:18px;pointer-events:none}
+.short .ov b{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.15rem;line-height:1.15}
+.short .sb{position:absolute;top:12px;left:12px;background:rgba(8,11,18,.75);font-size:.7rem;font-weight:800;letter-spacing:.12em;padding:4px 9px;border-radius:3px;text-transform:uppercase}
+.short .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.6);opacity:0;transition:.35s var(--ease);width:64px;height:64px}
+.short.atual .play{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.ctrl{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:22px}
+.ctrl button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:border-color .25s,background .25s}
+.ctrl button:hover{border-color:var(--red);background:rgba(224,31,39,.12)}
+.ctrl button svg{width:20px;height:20px}
+.ctrl .cont{font-family:"Oswald",sans-serif;letter-spacing:.2em;min-width:70px;text-align:center}
+
+/* ===== SEMINÁRIOS ===== */
+#seminarios{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);padding:clamp(90px,12vw,150px) 0}
+.sem-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,70px);align-items:start}
+.inclui{list-style:none;counter-reset:i;margin:30px 0 20px;display:grid;gap:2px}
+.inclui li{counter-increment:i;display:grid;grid-template-columns:54px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.inclui li::before{content:"0" counter(i);font-family:"Oswald",sans-serif;color:var(--red);font-size:1.6rem;line-height:1}
+.inclui b{display:block;color:var(--text);font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.2rem;letter-spacing:.03em;margin-bottom:2px}
+.inclui span{color:var(--muted)}
+.mini{color:var(--muted);font-size:.92rem;margin-top:12px}
+.mini a{color:#fff;border-bottom:1px solid var(--red);padding:4px 0}
+form{background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:clamp(22px,3vw,34px)}
+.f-t{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.5rem;letter-spacing:.03em}
+.f-s{color:var(--muted);font-size:.94rem;margin:4px 0 22px}
+.campo{margin-bottom:16px}
+.dois{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.86rem;font-weight:700;margin-bottom:7px;color:#C7CFDD}
+label .r{color:var(--red-hot)}
+input,select,textarea{width:100%;background:var(--navy);border:1px solid var(--line);border-radius:4px;padding:13px 14px;color:#fff;font:inherit;font-size:16px;transition:border-color .2s,background .2s;min-height:50px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red);background:var(--navy-soft)}
+textarea{resize:vertical;min-height:92px}
+.f-nota{font-size:.8rem;color:var(--muted);margin-top:14px;text-align:center}
+form .btn{width:100%}
+
+/* ===== EMBAIXADOR ===== */
+#embaixador{background:var(--navy);padding:clamp(90px,12vw,150px) 0}
+.emb-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,5vw,70px);align-items:start}
+.emb-txt p{color:var(--muted);margin-bottom:16px}
+.podera{list-style:none;margin:24px 0;display:grid;gap:10px}
+.podera li{padding:16px 18px;background:rgba(12,17,27,.45);border-left:3px solid var(--red);font-weight:600}
+.frase{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.35rem;line-height:1.25;margin-top:20px;color:#fff}
+.frase span{color:var(--red-hot)}
+.etapas{display:flex;gap:6px;margin:6px 0 22px}
+.etapas i{flex:1;height:4px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+.etapas i::after{content:"";position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.etapas i.ok::after{transform:scaleX(1)}
+.etapa-n{font-family:"Oswald",sans-serif;letter-spacing:.2em;color:var(--red-hot);font-size:.8rem;text-transform:uppercase}
+.bloco{display:none;border:0}
+.bloco.on{display:block;animation:entra .5s var(--ease)}
+@keyframes entra{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.bloco legend{font-family:"Oswald",sans-serif;text-transform:uppercase;font-size:1.45rem;margin:4px 0 18px;letter-spacing:.02em}
+.bloco legend small{font-family:"Manrope";text-transform:none;font-size:.85rem;color:var(--muted);letter-spacing:0;font-weight:500}
+.nav-f{display:flex;gap:12px;margin-top:10px}
+.nav-f .btn{flex:1}
+.decl{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
+.decl input{width:22px;height:22px;min-height:0;flex:none;margin-top:3px;accent-color:var(--red)}
+.decl label{font-weight:500;color:var(--muted);margin:0;cursor:pointer}
+
+/* ===== RODAPÉ ===== */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:56px 0 30px}
+.rod-g{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.rod-g .marca img{width:56px;height:56px}
+.yt-b{width:48px;height:48px;border-radius:4px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:.25s}
+.yt-b:hover{border-color:var(--red);color:#fff;background:rgba(224,31,39,.12)}
+.yt-b svg{width:22px;height:22px}
+.copy{text-align:center;color:var(--muted);font-size:.82rem;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+
+/* ===== PLAYER / LIGHTBOX ===== */
+dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;color:var(--text)}
+dialog::backdrop{background:rgba(5,8,14,.92);backdrop-filter:blur(6px)}
+.dlg{position:fixed;inset:0;display:grid;place-items:center;padding:70px 16px 24px}
+.dlg-box{width:min(1100px,100%);aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.8)}
+.dlg-box.vert{width:auto;height:min(82vh,820px);aspect-ratio:9/16}
+.dlg-box.img{aspect-ratio:auto;width:auto;height:auto;background:transparent;box-shadow:none}
+.dlg-box.img img{max-height:84vh;width:auto;border-radius:12px}
+.dlg-box iframe{width:100%;height:100%;border:0}
+.fechar{position:fixed;top:16px;right:16px;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;z-index:2}
+.fechar:hover{background:var(--red)}
+.fechar::before,.fechar::after{content:"";position:absolute;width:22px;height:2px;background:#fff;transform:rotate(45deg)}
+.fechar::after{transform:rotate(-45deg)}
+
+/* revelar */
+.rv{opacity:0;transform:translateY(26px)}
+.sem-anim .rv{opacity:1;transform:none}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:1080px){
+  .links{display:none}
+  .menu-b{display:flex}
+  .nav .btn{display:none}
+}
+@media (max-width:900px){
+  .sobre-g,.cards-g,.sem-g,.emb-g,.patro-g,.lista-v,.temas,.faq{grid-template-columns:1fr}
+  .inst-topo{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr}
+  .partes{grid-template-columns:1fr}
+  .destaque{display:none}   /* no celular o vídeo em destaque fica na seção Vídeos */
+  .hero-c{padding-bottom:28px}
+  #top{min-height:max(100svh,780px)}   /* celular baixo: sobra espaço pro urso em cima do texto */
+  .rolar{display:none}
+  .baralho{height:min(56vh,460px);order:-1}
+  .cards-g{min-height:0}
+  .foto-r{max-width:520px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .dois{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr}
+  .passo{padding-right:0}
+  .selos b{font-size:1.25rem}
+  .mini-v img{width:110px}
+  .cta .btn{flex:1 1 100%}
+  .nums{gap:22px}
+  .h1{font-size:clamp(3.6rem,19vw,6rem)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="marca"><img src="assets/bear.png" alt="Systema Araújo" width="42" height="42"><span>Systema Araújo<small>Academia de defesa pessoal</small></span></a>
+    <nav class="links" aria-label="Seções">
+      <a href="#cards" class="quente">Cards 54 dias</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#institucional">Institucional</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#shorts">Shorts</a>
+      <a href="#seminarios">Seminários</a>
+      <a href="#embaixador">Embaixador</a>
+    </nav>
+    <a href="https://www.youtube.com/@systemaaraujo?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-red">Inscreva-se</a>
+    <button class="menu-b" id="menu-b" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<nav id="painel" aria-label="Menu">
+  <a href="#cards" class="quente">Cards 54 dias</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#institucional">Institucional</a>
+  <a href="#videos">Vídeos</a>
+  <a href="#shorts">Shorts</a>
+  <a href="#seminarios">Seminários</a>
+  <a href="#embaixador">Embaixador</a>
+  <a href="https://www.youtube.com/@systemaaraujo?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-red">Inscreva-se no canal</a>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="top" class="grao">
+  <canvas id="cena" aria-hidden="true"></canvas>
+  <div class="hero-fb" aria-hidden="true"><img src="assets/bear.png" alt=""></div>
+  <div class="wrap hero-c">
+    <div class="yt-linha"><i></i>96,9 mil inscritos no YouTube</div>
+    <h1 class="h1" aria-label="Systema Araújo"><span class="l1" aria-hidden="true">Systema</span><span class="l2" aria-hidden="true">Araújo</span></h1>
+    <p class="tag">Defesa pessoal russa que funciona na vida real. Movimento, respiração e estrutura, na linhagem <strong>Vasiliev</strong>.</p>
+    <div class="cta">
+      <a href="https://www.youtube.com/@systemaaraujo?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-red"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Inscreva-se no canal</a>
+      <a href="#seminarios" class="btn btn-line">Trazer seminário à sua cidade</a>
+    </div>
+    <div class="nums">
+      <div><b>96,9 mil</b><span>Inscritos</span></div>
+      <div><b>978</b><span>Vídeos</span></div>
+      <div><b>16,3 mi</b><span>Visualizações</span></div>
+    </div>
+  </div>
+  <button class="destaque js-video" data-yt="At1YYkBpLL0" aria-label="Assistir ao vídeo em destaque">
+    <img src="https://i.ytimg.com/vi/At1YYkBpLL0/maxresdefault.jpg" alt="Vídeo em destaque: abraço por trás, aprenda a se defender" width="1280" height="720">
+    <span class="rodape-v"><span class="play"></span><span><b>Em destaque</b><small>Abraço por trás? Aprenda a se defender</small></span></span>
+  </button>
+  <div class="rolar">Role</div>
+</section>
+
+<!-- ============ OS 4 ELEMENTOS ============ -->
+<section id="elementos" class="grao" aria-label="Os 4 elementos do Systema">
+  <div class="resp-pin">
+    <div class="anel" id="anel"></div>
+    <div class="resp-topo"><div class="rot">Os 4 elementos</div><p>Movimento, respiração e estrutura: a base de todo treino.</p></div>
+    <div class="fase" id="fase">Inspira</div>
+    <div class="els">
+      <div class="el"><span class="n">01</span><h3>Respiração</h3><p>Faça três respirações profundas sempre que perceber tensão no corpo.</p><small>Do card 47</small></div>
+      <div class="el"><span class="n">02</span><h3>Relaxamento</h3><p>Tensão desnecessária gasta energia e atrapalha seus movimentos. Corpo relaxado, strike forte.</p><small>Do card 47 e dos shorts</small></div>
+      <div class="el"><span class="n">03</span><h3>Postura</h3><p>Corpo tenso, a energia não flui. Ombros, rosto e mandíbula relaxados, mesmo em alerta.</p><small>Dos shorts e do card 47</small></div>
+      <div class="el"><span class="n">04</span><h3>Movimento</h3><p>O movimento depende da energia fluida. É ele que gera a defesa.</p><small>Dos shorts</small></div>
+    </div>
+    <p class="resp-fim">Dominando os 4 elementos, você domina o Systema.</p>
+    <div class="resp-barra" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section id="sobre">
+  <div class="wrap sobre-g">
+    <div class="foto-r" id="foto-r">
+      <img src="assets/rodrigo.jpg" alt="Rodrigo Araujo, instrutor de Systema" width="964" height="1280" loading="lazy">
+      <div class="foto-leg"><b>Rodrigo Araujo</b><span>Instrutor de Systema</span></div>
+    </div>
+    <div class="txt">
+      <div class="rot rv">Sobre</div>
+      <h2 class="tit rv">Quem é o instrutor</h2>
+      <p class="rv"><strong>Rodrigo Araujo</strong> é instrutor internacionalmente certificado de Systema desde 2012, com quase <strong>50 anos de prática em artes marciais</strong>: judô, jiu-jitsu, kung fu, capoeira, aikido, krav maga e Systema. É também <strong>CAC</strong>, instrutor e pós-graduado em armamento e tiro, e <strong>faixa preta Wolf Hunter</strong> pela Esperandio Academy.</p>
+      <div class="selos rv">
+        <div><b>2012</b><span>Systema desde</span></div>
+        <div><b>~50 anos</b><span>de artes marciais</span></div>
+        <div><b>CAC</b><span>Instrutor de tiro</span></div>
+        <div><b>Wolf Hunter</b><span>Faixa preta</span></div>
+      </div>
+      <blockquote class="rv">"A segurança nasce do preparo. No Systema, treinamos o corpo para responder com calma sob pressão."</blockquote>
+    </div>
+  </div>
+  <div class="artes" aria-label="Artes marciais praticadas pelo Rodrigo">
+    <div class="artes-t" id="artes-t"><span>Judô</span><span>Jiu-jitsu</span><span>Kung fu</span><span>Capoeira</span><span>Aikido</span><span>Krav maga</span><span class="s">Systema</span><span>Judô</span><span>Jiu-jitsu</span><span>Kung fu</span></div>
+  </div>
+  <p class="artes-leg">Quase 50 anos de tatame até chegar no Systema</p>
+</section>
+
+<!-- ============ CARDS 54 DIAS ============ -->
+<section id="cards" class="grao">
+  <div class="wrap">
+    <div class="cards-g" id="cards-g">
+      <div class="baralho" id="baralho" aria-label="Prévia dos cards. Toque num card pra ver inteiro.">
+        <div class="brilho-c"></div>
+        <div class="baralho-in" id="baralho-in">
+          <button class="carta" data-img="assets/cards/card-01.jpg"><img src="assets/cards/card-01.jpg" alt="Card 01: Olhe antes de entrar" width="555" height="807" loading="lazy"></button>
+          <button class="carta" data-img="assets/cards/card-04.jpg"><img src="assets/cards/card-04.jpg" alt="Card 04: Não entregue sua atenção ao celular" width="555" height="807" loading="lazy"></button>
+          <button class="carta" data-img="assets/cards/card-41.jpg"><img src="assets/cards/card-41.jpg" alt="Card 41: Quebre o padrão do oponente" width="555" height="807" loading="lazy"></button>
+          <button class="carta" data-img="assets/cards/card-53.jpg"><img src="assets/cards/card-53.jpg" alt="Card 53: Os 4 elementos" width="555" height="807" loading="lazy"></button>
+          <button class="carta" data-img="assets/cards/card-47.jpg"><img src="assets/cards/card-47.jpg" alt="Card 47: Relaxe para ser eficiente" width="555" height="807" loading="lazy"></button>
+          <button class="carta" data-img="assets/cards/card-22.jpg"><img src="assets/cards/card-22.jpg" alt="Card 22: Distância é tempo" width="555" height="807" loading="lazy"></button>
+        </div>
+      </div>
+      <div>
+        <div class="rot rv">Produto digital</div>
+        <h2 class="tit rv">54 dias mais <span style="color:var(--red)">preparado</span></h2>
+        <p class="lead rv">Leve os princípios do Systema Araújo para a sua rotina: um card por dia para treinar percepção, movimento e defesa pessoal.</p>
+        <ul class="pontos rv">
+          <li>54 cards digitais em PDF, prontos para baixar e imprimir</li>
+          <li>Todo card traz uma dica, uma aplicação prática e um desafio</li>
+          <li>Conteúdo criado por Rodrigo Araújo, da linhagem Vasiliev</li>
+        </ul>
+        <div class="preco rv"><b>R$ 9,97</b><span>54 cards, cerca de R$ 0,18 por card</span></div>
+        <div class="cta rv">
+          <a href="https://app.abacatepay.com/pay/bill_gwcWyrQuBZ4nwK3qnGSCBsbL" target="_blank" rel="noopener" class="btn btn-red">Quero meus 54 cards</a>
+          <button class="btn btn-line js-panda">Ver o vídeo dos cards</button>
+        </div>
+        <p class="aviso-d rv">Produto digital em PDF. Nenhum material físico será enviado.</p>
+      </div>
+    </div>
+
+    <div class="passos">
+      <div class="passo rv"><b>1</b><h4>Baixe</h4><p>Depois da compra você recebe o PDF.</p></div>
+      <div class="passo rv"><b>2</b><h4>Imprima</h4><p>Use sua impressora ou uma gráfica.</p></div>
+      <div class="passo rv"><b>3</b><h4>Recorte</h4><p>Os cards já têm formato preparado para impressão.</p></div>
+      <div class="passo rv"><b>4</b><h4>Treine</h4><p>Escolha um card por dia durante 54 dias.</p></div>
+    </div>
+
+    <div class="partes">
+      <div class="parte rv"><h4>Dica</h4><p>Um princípio simples para você compreender.</p></div>
+      <div class="parte rv"><h4>Na prática</h4><p>Como aplicar esse princípio.</p></div>
+      <div class="parte rv"><h4>Desafio</h4><p>Uma ação para transformar conhecimento em comportamento.</p></div>
+    </div>
+
+    <div class="temas">
+      <h3 class="rv">O que os 54 dias cobrem</h3>
+      <ul class="rv"><li>Percepção do ambiente</li><li>Saídas</li><li>Distância</li><li>Respiração</li><li>Relaxamento</li><li>Postura</li><li>Movimento</li><li>Atenção</li><li>Posicionamento</li><li>Reação sob pressão</li><li>Adaptação</li><li>Outros princípios do Systema Araújo</li></ul>
+    </div>
+
+    <div class="cards-cta rv">
+      <p><b>Atenção:</b> este é um produto digital. Você receberá arquivos em PDF para impressão. Não haverá envio de cartas físicas para sua residência.</p>
+      <a href="https://app.abacatepay.com/pay/bill_gwcWyrQuBZ4nwK3qnGSCBsbL" target="_blank" rel="noopener" class="btn btn-red">Quero começar os 54 dias</a>
+    </div>
+
+    <div class="faq">
+      <h3 class="rv">Perguntas frequentes</h3>
+      <div class="rv">
+        <details><summary>Recebo os cards físicos em casa?</summary><p>Não. É um produto 100% digital: você recebe um arquivo em PDF para baixar e imprimir. Nenhum material físico é enviado.</p></details>
+        <details><summary>Preciso de impressora especial?</summary><p>Não. O PDF vem preparado para imprimir em impressora comum ou em qualquer gráfica, com o formato de corte já marcado.</p></details>
+        <details><summary>Como recebo o arquivo depois de pagar?</summary><p>Assim que o pagamento via Pix é confirmado, o link de download é liberado para você.</p></details>
+        <details><summary>Quem criou o conteúdo?</summary><p>Rodrigo Araújo, instrutor internacional de Systema (linhagem Vasiliev), responsável pelo Systema Araújo.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTITUCIONAL ============ -->
+<section id="institucional">
+  <div class="wrap">
+    <div class="inst-topo">
+      <div>
+        <div class="rot rv">Institucional</div>
+        <h2 class="tit rv">O trabalho por trás do canal</h2>
+        <p class="lead rv">Mais do que técnica: um método para desenvolver percepção, controle e reação diante do imprevisto. Conheça a filosofia do Systema Araújo e o que você vai encontrar aqui.</p>
+      </div>
+      <a href="https://www.youtube.com/@systemaaraujo" target="_blank" rel="noopener" class="btn btn-line rv">Conhecer o canal completo</a>
+    </div>
+    <div class="video-g js-inline" id="video-inst" data-yt="HaUlzhWoifI" role="button" tabindex="0" aria-label="Assistir ao vídeo institucional">
+      <img src="https://i.ytimg.com/vi/HaUlzhWoifI/maxresdefault.jpg" alt="Vídeo institucional: defesa de strike com os braços, Bandeira Nacional, Brasília" width="1280" height="720" loading="lazy">
+      <span class="etq">Vídeo institucional</span>
+      <span class="play grande"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATROCÍNIO ============ -->
+<section id="patrocinadores">
+  <div class="wrap patro-g">
+    <div>
+      <div class="rot rv">Patrocínio</div>
+      <h2 class="tit rv">Quem apoia o Systema Araújo</h2>
+      <p class="lead rv">Parceiros que compartilham a missão de espalhar preparo e defesa pessoal que funciona na vida real.</p>
+      <p class="nota-p rv">Quer patrocinar o canal? <a href="#seminarios">Fale com a gente</a>.</p>
+    </div>
+    <a href="https://portaldpa.com" target="_blank" rel="noopener" class="dpa rv" id="dpa">
+      <img src="assets/logo-dpa.webp" alt="Portal DPA" loading="lazy">
+      <span class="t">Defesa Pessoal Avançada</span>
+      <span class="seta">Visitar portaldpa.com <span>→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ VÍDEOS ============ -->
+<section id="videos" class="grao">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rot rv">No YouTube</div><h2 class="tit rv">Últimos vídeos</h2></div>
+      <a href="https://www.youtube.com/@systemaaraujo/videos" target="_blank" rel="noopener" class="seta">Ver todos os vídeos <span>→</span></a>
+    </div>
+    <div class="lista-v">
+      <div class="video-g js-inline rv" data-list="UUXpUrpTFHlusGhix1HjWljQ" role="button" tabindex="0" aria-label="Tocar a playlist do canal">
+        <img src="https://i.ytimg.com/vi/At1YYkBpLL0/maxresdefault.jpg" alt="Playlist do canal Systema Araújo" width="1280" height="720" loading="lazy">
+        <span class="etq">Playlist do canal</span>
+        <span class="play grande"></span>
+      </div>
+      <div class="lista-lado rv">
+        <div>
+          <h3>978 vídeos</h3>
+          <p>A lista atualiza automaticamente com os vídeos mais recentes do canal.</p>
+        </div>
+        <button class="mini-v js-video" data-yt="At1YYkBpLL0"><img src="https://i.ytimg.com/vi/At1YYkBpLL0/hqdefault.jpg" alt="" loading="lazy"><span><b>Abraço por trás? Aprenda a se defender</b><small>Em destaque</small></span></button>
+        <button class="mini-v js-video" data-yt="HaUlzhWoifI"><img src="https://i.ytimg.com/vi/HaUlzhWoifI/hqdefault.jpg" alt="" loading="lazy"><span><b>Defesa de strike com os braços</b><small>Institucional</small></span></button>
+        <a href="https://www.youtube.com/@systemaaraujo?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-red">Inscreva-se no canal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHORTS ============ -->
+<section id="shorts">
+  <div class="wrap">
+    <div class="cab">
+      <div><div class="rot rv">Rápido e direto</div><h2 class="tit rv">Shorts</h2></div>
+      <a href="https://www.youtube.com/@systemaaraujo/shorts" target="_blank" rel="noopener" class="seta">Ver todos os shorts <span>→</span></a>
+    </div>
+  </div>
+  <div class="palco" id="palco" aria-roledescription="carrossel" aria-label="Shorts do canal. Arraste pro lado."></div>
+  <div class="ctrl">
+    <button id="sh-ant" aria-label="Short anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span class="cont" id="sh-cont">01 / 08</span>
+    <button id="sh-prox" aria-label="Próximo short"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</section>
+
+<!-- ============ SEMINÁRIOS ============ -->
+<section id="seminarios">
+  <div class="wrap sem-g">
+    <div>
+      <div class="rot rv">Seminários</div>
+      <h2 class="tit rv">Traga o Systema Araújo para a sua cidade</h2>
+      <p class="lead rv">Organize um seminário presencial de defesa pessoal com o instrutor Rodrigo Araujo. Ideal para grupos, academias, equipes de segurança e forças de proteção.</p>
+      <p class="mini rv">Quer ir além de um evento pontual e representar oficialmente o Systema Araujo na sua cidade? <a href="#embaixador">Conheça o programa de Embaixador</a>.</p>
+      <ul class="inclui">
+        <li class="rv"><span><b>Fundamentos do Systema</b>Respiração, relaxamento, estrutura e movimento.</span></li>
+        <li class="rv"><span><b>Defesa aplicada</b>Agarramentos, strikes, ataques por trás e no chão.</span></li>
+        <li class="rv"><span><b>Trabalho sob pressão</b>Controle emocional e resposta diante do imprevisto.</span></li>
+        <li class="rv"><span><b>Conteúdo adaptável</b>Do iniciante ao praticante avançado.</span></li>
+      </ul>
+      <p class="mini rv">Preencha o formulário com os dados da sua cidade e a demanda estimada. Retornamos com disponibilidade de datas, formato e valores.</p>
+    </div>
+
+    <form id="f-sem" class="rv" novalidate>
+      <div class="f-t">Solicitar um seminário</div>
+      <div class="f-s">Leve o treinamento até você.</div>
+      <div class="dois">
+        <div class="campo"><label for="s1">Nome <span class="r">*</span></label><input id="s1" name="nome" required placeholder="Seu nome" autocomplete="name"></div>
+        <div class="campo"><label for="s2">WhatsApp <span class="r">*</span></label><input id="s2" type="tel" name="whatsapp" required placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" autocomplete="tel"></div>
+      </div>
+      <div class="dois">
+        <div class="campo"><label for="s3">Cidade <span class="r">*</span></label><input id="s3" name="cidade" required placeholder="Sua cidade" autocomplete="address-level2"></div>
+        <div class="campo"><label for="s4">Estado <span class="r">*</span></label><select id="s4" name="estado" required class="js-uf"></select></div>
+      </div>
+      <div class="dois">
+        <div class="campo"><label for="s5">E-mail</label><input id="s5" type="email" name="email" placeholder="voce@email.com" autocomplete="email"></div>
+        <div class="campo"><label for="s6">Interessados (estimativa)</label><select id="s6" name="interessados"><option value="">Selecione</option><option>Até 10 pessoas</option><option>10 a 25 pessoas</option><option>25 a 50 pessoas</option><option>Mais de 50 pessoas</option></select></div>
+      </div>
+      <div class="campo"><label for="s7">Local sugerido / perfil do grupo</label><input id="s7" name="local" placeholder="Ex.: academia, box de CrossFit, equipe de segurança..."></div>
+      <div class="campo"><label for="s8">Mensagem (opcional)</label><textarea id="s8" name="mensagem" placeholder="Conte um pouco sobre o grupo e as datas que você tem em mente."></textarea></div>
+      <button type="submit" class="btn btn-red">Enviar solicitação</button>
+      <p class="f-nota">Ao enviar, abriremos o WhatsApp com sua mensagem pronta.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ EMBAIXADOR ============ -->
+<section id="embaixador" class="grao">
+  <div class="wrap emb-g">
+    <div class="emb-txt">
+      <div class="rot rv">Embaixador oficial</div>
+      <h2 class="tit rv">Torne-se um Embaixador Oficial do Systema Araujo</h2>
+      <p class="lead rv" style="margin-bottom:16px">Estamos expandindo nossa atuação pelo Brasil e procurando pessoas comprometidas para representar oficialmente o Systema Araujo em suas cidades.</p>
+      <p class="rv">Você tem liderança? Gosta de defesa pessoal? Deseja fazer parte de um projeto em crescimento? Então esta oportunidade pode ser para você!</p>
+      <p class="rv" style="font-size:.92rem">Quer só trazer um seminário pontual para sua cidade, sem compromisso de representação? <a href="#seminarios" style="color:#fff;border-bottom:1px solid var(--red)">Solicite um seminário</a>. O Embaixador é para quem quer assumir a organização de seminários e a representação oficial da marca na região.</p>
+      <h3 class="rv" style="font-size:1.5rem;margin-top:26px">Como Embaixador, você poderá</h3>
+      <ul class="podera">
+        <li class="rv">Organizar seminários e eventos</li>
+        <li class="rv">Desenvolver grupos de treinamento em sua região</li>
+        <li class="rv">Aproximar pessoas do universo da defesa pessoal tática</li>
+        <li class="rv">Fazer parte de uma rede nacional ligada ao Systema Araujo</li>
+      </ul>
+      <p class="rv">Esta não é apenas uma oportunidade de representação. É a chance de participar da construção de um dos maiores movimentos de defesa pessoal do Brasil.</p>
+      <p class="frase rv">Seja a referência do Systema em sua cidade.<br><span>Faça parte da expansão do Systema Araujo.</span></p>
+    </div>
+
+    <form id="f-emb" class="rv" novalidate>
+      <div class="f-t">Questionário: Embaixador Oficial</div>
+      <div class="f-s">Obrigado pelo seu interesse em representar o Systema Araujo em sua cidade. Responda às perguntas com o máximo de detalhes possível.</div>
+      <div class="etapa-n" id="etapa-n">Etapa 1 de 7</div>
+      <div class="etapas" id="etapas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+      <fieldset class="bloco on">
+        <legend>1. Dados pessoais</legend>
+        <div class="dois">
+          <div class="campo"><label for="e9">Nome completo <span class="r">*</span></label><input id="e9" name="nome" required autocomplete="name"></div>
+          <div class="campo"><label for="e10">Idade <span class="r">*</span></label><input id="e10" type="number" name="idade" min="1" required inputmode="numeric"></div>
+        </div>
+        <div class="dois">
+          <div class="campo"><label for="e11">Cidade <span class="r">*</span></label><input id="e11" name="cidade" required autocomplete="address-level2"></div>
+          <div class="campo"><label for="e12">Estado <span class="r">*</span></label><select id="e12" name="estado" required class="js-uf"></select></div>
+        </div>
+        <div class="dois">
+          <div class="campo"><label for="e13">Telefone (WhatsApp) <span class="r">*</span></label><input id="e13" type="tel" name="whatsapp" required placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric" autocomplete="tel"></div>
+          <div class="campo"><label for="e14">E-mail</label><input id="e14" type="email" name="email" autocomplete="email"></div>
+        </div>
+        <div class="campo"><label for="e15">Redes sociais (Instagram, Facebook, YouTube)</label><input id="e15" name="redes_sociais"></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>2. Formação e experiência</legend>
+        <div class="campo"><label for="e16">Você pratica alguma arte marcial ou modalidade de defesa pessoal?</label><select id="e16" name="pratica_arte_marcial" class="js-sn"></select></div>
+        <div class="campo"><label for="e17">Se sim, quais?</label><input id="e17" name="quais_artes"></div>
+        <div class="campo"><label for="e18">Há quanto tempo você pratica artes marciais?</label><input id="e18" name="tempo_pratica"></div>
+        <div class="campo"><label for="e19">Você possui graduação, certificações ou cursos na área?</label><textarea id="e19" name="graduacoes"></textarea></div>
+        <div class="campo"><label for="e20">Você já ministrou aulas ou treinamentos?</label><select id="e20" name="ja_ministrou" class="js-sn"></select></div>
+        <div class="campo"><label for="e21">Explique</label><textarea id="e21" name="explique_ministrou"></textarea></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>3. Estrutura e networking</legend>
+        <div class="campo"><label for="e22">Você possui academia, centro de treinamento ou espaço para eventos?</label><select id="e22" name="possui_espaco" class="js-sn"></select></div>
+        <div class="campo"><label for="e23">Descreva</label><textarea id="e23" name="descreva_espaco"></textarea></div>
+        <div class="campo"><label for="e24">Quantas pessoas você acredita conseguir reunir para um seminário do Systema Araujo?</label><select id="e24" name="qtd_pessoas"><option value="">Selecione</option><option>Até 20 pessoas</option><option>20 a 50 pessoas</option><option>50 a 100 pessoas</option><option>Mais de 100 pessoas</option></select></div>
+        <div class="campo"><label for="e25">Você possui contato com academias, instrutores ou grupos de segurança em sua região?</label><select id="e25" name="possui_contatos" class="js-sn"></select></div>
+        <div class="campo"><label for="e26">Quais?</label><input id="e26" name="quais_contatos"></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>4. Interesse no projeto</legend>
+        <div class="campo"><label for="e27">Por que você deseja representar o Systema Araujo em sua cidade?</label><textarea id="e27" name="motivo_interesse"></textarea></div>
+        <div class="campo"><label for="e28">O que mais lhe chamou atenção no trabalho do Systema Araujo?</label><textarea id="e28" name="o_que_chamou_atencao"></textarea></div>
+        <div class="campo"><label for="e29">Como você acredita que poderia contribuir para o crescimento do projeto em sua região?</label><textarea id="e29" name="como_contribuir"></textarea></div>
+        <div class="campo"><label for="e30">Você estaria disposto a participar de treinamentos e reuniões online periódicas?</label><select id="e30" name="disposto_treinamentos" class="js-sn"></select></div>
+        <div class="campo"><label for="e31">Você teria disponibilidade para organizar seminários, workshops e eventos?</label><select id="e31" name="disponibilidade_organizar" class="js-sn"></select></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>5. Perfil pessoal <small>(avalie de 1 a 5)</small></legend>
+        <div class="dois">
+          <div class="campo"><label for="e32">Liderança</label><select id="e32" name="lideranca" class="js-15"></select></div>
+          <div class="campo"><label for="e33">Comunicação</label><select id="e33" name="comunicacao" class="js-15"></select></div>
+        </div>
+        <div class="dois">
+          <div class="campo"><label for="e34">Organização</label><select id="e34" name="organizacao" class="js-15"></select></div>
+          <div class="campo"><label for="e35">Comprometimento</label><select id="e35" name="comprometimento" class="js-15"></select></div>
+        </div>
+        <div class="campo"><label for="e36">Facilidade em trabalhar em equipe</label><select id="e36" name="trabalho_equipe" class="js-15"></select></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>6. Visão de futuro</legend>
+        <div class="campo"><label for="e37">Onde você se vê dentro do projeto Systema Araujo nos próximos 3 anos?</label><textarea id="e37" name="visao_3_anos"></textarea></div>
+        <div class="campo"><label for="e38">Quais são seus objetivos pessoais e profissionais relacionados à defesa pessoal e artes marciais?</label><textarea id="e38" name="objetivos"></textarea></div>
+      </fieldset>
+
+      <fieldset class="bloco">
+        <legend>7. Informações complementares</legend>
+        <div class="campo"><label for="e39">Existe alguma informação adicional que gostaria de compartilhar?</label><textarea id="e39" name="info_complementar"></textarea></div>
+        <div class="campo"><label for="e40">Pergunta bônus (muito importante para seleção): se você tivesse total autonomia para divulgar o Systema Araujo em sua cidade, quais seriam as três primeiras ações que realizaria?</label><textarea id="e40" name="pergunta_bonus"></textarea></div>
+        <div class="decl"><input type="checkbox" id="e-decl" name="declaracao" required><label for="e-decl">Declaro que as informações fornecidas são verdadeiras e que tenho interesse genuíno em representar o Systema Araujo em minha cidade, contribuindo para a expansão do projeto de forma ética e profissional.</label></div>
+      </fieldset>
+
+      <div class="nav-f">
+        <button type="button" class="btn btn-line" id="e-volta" hidden>Voltar</button>
+        <button type="button" class="btn btn-red" id="e-prox">Próxima etapa</button>
+        <button type="submit" class="btn btn-red" id="e-env" hidden>Enviar questionário</button>
+      </div>
+      <p class="f-nota">Ao enviar, abriremos o WhatsApp com suas respostas prontas.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="rod-g">
+      <a href="#top" class="marca"><img src="assets/bear.png" alt="Systema Araújo" width="56" height="56" loading="lazy"><span>Systema Araújo<small>Academia, defesa pessoal, linhagem Vasiliev</small></span></a>
+      <a href="https://www.youtube.com/@systemaaraujo" target="_blank" rel="noopener" class="yt-b" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
+    </div>
+    <div class="copy">© <span id="ano"></span> Systema Araújo. Todos os direitos reservados. Defesa pessoal com base no Systema russo.</div>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-label="Player">
+  <div class="dlg"><button class="fechar" id="fechar" aria-label="Fechar"></button><div class="dlg-box" id="dlg-box"></div></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ---------- CONFIG (mesmo do site atual) ---------- */
+const CONFIG = {
+  whatsapp: "5511957761009",
+  /* gravação no banco do site atual: DESLIGADA na prévia pra nenhum teste cair na base real.
+     Pra ligar: salvarNoBanco: true (a URL e a chave pública são as do site atual). */
+  salvarNoBanco: false,
+  supabaseUrl: "https://cvwfxkqgqevlvqcswwzg.supabase.co",
+  supabaseAnonKey: "", /* chave anon do site atual dele: colar aqui só quando ligar salvarNoBanco */
+  pandaVideo: "https://player-vz-8fe9b8d6-aa4.tv.pandavideo.com.br/embed/?v=44e6bf34-1586-4709-afed-dc10abd32a33"
+};
+const SHORTS = [
+  { id:"yhmcKaxbLrM", t:"Movimento pra gerar defesa" },
+  { id:"foKUtXfWAxo", t:"Como usar os cotovelos na defesa" },
+  { id:"kZv6rwwNwp8", t:"Usando as mãos ou os antebraços" },
+  { id:"egTebzCjGTw", t:"No Systema treinamos o toque no corpo" },
+  { id:"bkLVvOuPk2E", t:"O movimento depende da energia fluida" },
+  { id:"3Av0_1CV3sY", t:"Não bloqueie a energia" },
+  { id:"-pxUzdEAj_0", t:"Corpo tenso, a energia não flui" },
+  { id:"Zn8pqGDNVok", t:"Corpo relaxado, strike forte" }
+];
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const anima = !reduz && window.gsap && window.ScrollTrigger;
+const celular = () => innerWidth < 900;
+document.getElementById("ano").textContent = new Date().getFullYear();
+if (!anima) document.documentElement.classList.add("sem-anim");
+
+/* ---------- header e menu ---------- */
+const hdr = $("#hdr");
+const topoHdr = () => hdr.classList.toggle("solido", scrollY > 40);
+addEventListener("scroll", topoHdr, { passive:true }); topoHdr();
+const menuB = $("#menu-b");
+const menu = abre => { document.body.classList.toggle("menu-on", abre); menuB.setAttribute("aria-expanded", abre); menuB.setAttribute("aria-label", abre ? "Fechar menu" : "Abrir menu"); };
+menuB.addEventListener("click", () => menu(!document.body.classList.contains("menu-on")));
+$$("#painel a").forEach(a => a.addEventListener("click", () => menu(false)));
+
+/* ---------- player / lightbox ---------- */
+const dlg = $("#dlg"), box = $("#dlg-box");
+const abre = (html, cls) => { box.className = "dlg-box " + (cls || ""); box.innerHTML = html; dlg.showModal(); if (window.lenis) lenis.stop(); };
+const fecha = () => { dlg.close(); };
+dlg.addEventListener("close", () => { box.innerHTML = ""; if (window.lenis) lenis.start(); });
+$("#fechar").addEventListener("click", fecha);
+dlg.addEventListener("click", e => { if (e.target.classList.contains("dlg")) fecha(); });
+const yt = (id, vert) => `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="Vídeo do Systema Araújo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+$$(".js-video").forEach(b => b.addEventListener("click", () => abre(yt(b.dataset.yt))));
+$(".js-panda").addEventListener("click", () => abre(`<iframe src="${CONFIG.pandaVideo}" title="Vídeo dos 54 cards" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen></iframe>`));
+/* vídeo que toca no próprio lugar (institucional e playlist) */
+$$(".js-inline").forEach(el => {
+  const toca = () => {
+    const src = el.dataset.list
+      ? `https://www.youtube-nocookie.com/embed/videoseries?list=${el.dataset.list}&autoplay=1&rel=0`
+      : `https://www.youtube-nocookie.com/embed/${el.dataset.yt}?autoplay=1&rel=0`;
+    el.innerHTML = `<iframe src="${src}" title="Vídeo do Systema Araújo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    el.removeAttribute("role"); el.removeAttribute("tabindex");
+  };
+  el.addEventListener("click", toca, { once:true });
+  el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toca(); } }, { once:true });
+});
+$$(".carta").forEach(c => c.addEventListener("click", () => abre(`<img src="${c.dataset.img}" alt="${c.querySelector("img").alt}">`, "img")));
+
+/* ---------- SHORTS: carrossel 3D arrastável ---------- */
+(() => {
+  const palco = $("#palco");
+  palco.innerHTML = SHORTS.map((s, i) => `<button class="short" data-i="${i}" aria-label="Short: ${s.t}">
+      <img src="https://i.ytimg.com/vi/${s.id}/oardefault.jpg" alt="" loading="lazy" draggable="false" onerror="this.src='https://i.ytimg.com/vi/${s.id}/hqdefault.jpg'">
+      <span class="sb">Short</span><span class="play"></span><span class="ov"><b>${s.t}</b></span></button>`).join("");
+  const itens = [...palco.children], N = itens.length;
+  let cur = 0, alvo = 0, arrasta = null, moveu = 0;
+  const desenha = () => {
+    const w = itens[0].offsetWidth || 260, gap = celular() ? .72 : .66;
+    itens.forEach((el, i) => {
+      let d = i - cur;
+      const a = Math.abs(d);
+      el.style.transform = `translate(-50%,-50%) translateX(${d * w * gap}px) translateZ(${-a * 170}px) rotateY(${-Math.max(-1.6, Math.min(1.6, d)) * 26}deg)`;
+      el.style.opacity = a > 3.2 ? 0 : 1 - a * .18;
+      el.style.zIndex = 100 - Math.round(a * 10);
+      el.style.filter = `brightness(${1 - Math.min(a, 2) * .25})`;
+      el.classList.toggle("atual", Math.round(cur) === i);
+    });
+    $("#sh-cont").textContent = String(Math.round(cur) + 1).padStart(2, "0") + " / " + String(N).padStart(2, "0");
+  };
+  const loop = () => { cur += (alvo - cur) * .14; if (Math.abs(alvo - cur) < .001) cur = alvo; desenha(); requestAnimationFrame(loop); };
+  const vai = i => { alvo = Math.max(0, Math.min(N - 1, i)); };
+  palco.addEventListener("pointerdown", e => { arrasta = { x:e.clientX, c:alvo }; moveu = 0; palco.setPointerCapture(e.pointerId); });
+  palco.addEventListener("pointermove", e => { if (!arrasta) return; const dx = e.clientX - arrasta.x; moveu = Math.max(moveu, Math.abs(dx)); alvo = Math.max(-.4, Math.min(N - .6, arrasta.c - dx / (itens[0].offsetWidth * .7))); });
+  const solta = e => {
+    if (!arrasta) return;
+    arrasta = null;
+    if (moveu < 6) { /* foi um toque */
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const b = el && el.closest(".short");
+      if (b) { const i = +b.dataset.i; if (i === Math.round(cur)) abre(yt(SHORTS[i].id), "vert"); else vai(i); }
+    }
+    vai(Math.round(alvo));
+  };
+  palco.addEventListener("pointerup", solta); palco.addEventListener("pointercancel", solta);
+  palco.addEventListener("keydown", e => { if (e.key === "ArrowRight") vai(Math.round(alvo) + 1); if (e.key === "ArrowLeft") vai(Math.round(alvo) - 1); if (e.key === "Enter") { e.preventDefault(); const i = Math.round(cur); abre(yt(SHORTS[i].id), "vert"); } });
+  itens.forEach(b => b.addEventListener("click", e => e.preventDefault()));
+  $("#sh-ant").addEventListener("click", () => vai(Math.round(alvo) - 1));
+  $("#sh-prox").addEventListener("click", () => vai(Math.round(alvo) + 1));
+  desenha(); loop();
+})();
+
+/* ---------- formulários ---------- */
+const UF = "AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO".split(" ");
+$$(".js-uf").forEach(s => s.innerHTML = `<option value="">UF</option>` + UF.map(u => `<option>${u}</option>`).join(""));
+$$(".js-sn").forEach(s => s.innerHTML = `<option value="">Selecione</option><option>Sim</option><option>Não</option>`);
+$$(".js-15").forEach(s => s.innerHTML = `<option value="">-</option>` + [1,2,3,4,5].map(n => `<option>${n}</option>`).join(""));
+$$('input[name="whatsapp"]').forEach(inp => inp.addEventListener("input", () => {
+  let v = inp.value.replace(/\D/g, "").slice(0, 11);
+  if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+  else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+  else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5}).*/, "($1) $2");
+  else if (v.length > 0) v = v.replace(/^(\d{0,2})/, "($1");
+  inp.value = v;
+}));
+async function salvaBanco(tabela, dados) {
+  if (!CONFIG.salvarNoBanco) return;
+  try {
+    const r = await fetch(`${CONFIG.supabaseUrl}/rest/v1/${tabela}`, { method:"POST",
+      headers:{ "Content-Type":"application/json", apikey:CONFIG.supabaseAnonKey, Authorization:`Bearer ${CONFIG.supabaseAnonKey}`, Prefer:"return=minimal" },
+      body:JSON.stringify(dados) });
+    if (!r.ok) console.error("Falha ao salvar no banco:", await r.text());
+  } catch (err) { console.error("Erro ao salvar no banco:", err); }
+}
+const manda = msg => window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
+const valida = raiz => { const ruim = [...raiz.querySelectorAll("[required]")].find(c => !c.checkValidity()); if (ruim) { ruim.reportValidity(); return false; } return true; };
+
+$("#f-sem").addEventListener("submit", e => {
+  e.preventDefault(); const f = e.target; if (!valida(f)) return;
+  const d = k => (f[k]?.value || "").trim();
+  const dados = { nome:d("nome"), whatsapp:d("whatsapp"), cidade:d("cidade"), estado:d("estado"), email:d("email") || null,
+    interessados:d("interessados") || null, local:d("local") || null, mensagem:d("mensagem") || null };
+  salvaBanco("seminario_solicitacoes", dados);
+  manda(`*Solicitação de Seminário - Systema Araújo*
+
+*Nome:* ${dados.nome}
+*WhatsApp:* ${dados.whatsapp}
+*Cidade/Estado:* ${dados.cidade} / ${dados.estado}
+*E-mail:* ${dados.email || "-"}
+*Interessados:* ${dados.interessados || "-"}
+*Local/Perfil:* ${dados.local || "-"}
+
+*Mensagem:*
+${dados.mensagem || "-"}`);
+});
+
+/* questionário do embaixador em 7 etapas */
+(() => {
+  const f = $("#f-emb"), blocos = $$("#f-emb .bloco"), marcas = $$("#etapas i");
+  let at = 0;
+  const mostra = i => {
+    at = i;
+    blocos.forEach((b, k) => b.classList.toggle("on", k === i));
+    marcas.forEach((m, k) => m.classList.toggle("ok", k <= i));
+    $("#etapa-n").textContent = `Etapa ${i + 1} de ${blocos.length}`;
+    $("#e-volta").hidden = i === 0;
+    $("#e-prox").hidden = i === blocos.length - 1;
+    $("#e-env").hidden = i !== blocos.length - 1;
+  };
+  const topoForm = () => { const y = f.getBoundingClientRect().top + scrollY - 90; if (window.lenis) lenis.scrollTo(y); else scrollTo({ top:y, behavior:"smooth" }); };
+  $("#e-prox").addEventListener("click", () => { if (!valida(blocos[at])) return; mostra(at + 1); topoForm(); });
+  $("#e-volta").addEventListener("click", () => { mostra(at - 1); topoForm(); });
+  f.addEventListener("submit", e => {
+    e.preventDefault(); if (!valida(blocos[at])) return;
+    const d = k => (f[k]?.value || "").trim();
+    const campos = ["nome","idade","cidade","estado","whatsapp","email","redes_sociais","pratica_arte_marcial","quais_artes","tempo_pratica","graduacoes","ja_ministrou","explique_ministrou","possui_espaco","descreva_espaco","qtd_pessoas","possui_contatos","quais_contatos","motivo_interesse","o_que_chamou_atencao","como_contribuir","disposto_treinamentos","disponibilidade_organizar","lideranca","comunicacao","organizacao","comprometimento","trabalho_equipe","visao_3_anos","objetivos","info_complementar","pergunta_bonus"];
+    const dados = {}; campos.forEach(k => dados[k] = d(k) || (["nome","cidade","estado","whatsapp"].includes(k) ? d(k) : null));
+    salvaBanco("embaixador_solicitacoes", dados);
+    const x = v => v || "-";
+    manda(`*Questionário - Embaixador Oficial Systema Araújo*
+
+*Nome:* ${dados.nome}
+*Idade:* ${x(dados.idade)}
+*Cidade/Estado:* ${dados.cidade} / ${dados.estado}
+*WhatsApp:* ${dados.whatsapp}
+*E-mail:* ${x(dados.email)}
+*Redes sociais:* ${x(dados.redes_sociais)}
+
+*Pratica arte marcial:* ${x(dados.pratica_arte_marcial)} (${x(dados.quais_artes)})
+*Tempo de prática:* ${x(dados.tempo_pratica)}
+*Graduações/certificações:* ${x(dados.graduacoes)}
+*Já ministrou aulas:* ${x(dados.ja_ministrou)} - ${x(dados.explique_ministrou)}
+
+*Possui espaço/academia:* ${x(dados.possui_espaco)} - ${x(dados.descreva_espaco)}
+*Pessoas que consegue reunir:* ${x(dados.qtd_pessoas)}
+*Contatos com academias/grupos:* ${x(dados.possui_contatos)} - ${x(dados.quais_contatos)}
+
+*Por que quer representar:* ${x(dados.motivo_interesse)}
+*O que chamou atenção:* ${x(dados.o_que_chamou_atencao)}
+*Como pode contribuir:* ${x(dados.como_contribuir)}
+*Disposto a treinamentos online:* ${x(dados.disposto_treinamentos)}
+*Disponibilidade para organizar eventos:* ${x(dados.disponibilidade_organizar)}
+
+*Perfil (1-5):* Liderança ${x(dados.lideranca)}, Comunicação ${x(dados.comunicacao)}, Organização ${x(dados.organizacao)}, Comprometimento ${x(dados.comprometimento)}, Trabalho em equipe ${x(dados.trabalho_equipe)}
+
+*Visão em 3 anos:* ${x(dados.visao_3_anos)}
+*Objetivos:* ${x(dados.objetivos)}
+*Informações complementares:* ${x(dados.info_complementar)}
+
+*Pergunta bônus (3 primeiras ações):*
+${x(dados.pergunta_bonus)}`);
+  });
+  mostra(0);
+})();
+
+/* ---------- inclinação com o mouse (baralho e DPA) ---------- */
+if (!reduz && matchMedia("(hover:hover)").matches) {
+  const inclina = (alvo, area, forca) => {
+    area.addEventListener("pointermove", e => {
+      const r = area.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      alvo.style.transform = `rotateY(${x * forca}deg) rotateX(${-y * forca}deg)`;
+    });
+    area.addEventListener("pointerleave", () => alvo.style.transform = "");
+  };
+  inclina($("#baralho-in"), $("#baralho"), 16);
+  inclina($("#dpa"), $("#dpa"), 10);
+}
+
+/* ---------- ROLAGEM: Lenis + GSAP ---------- */
+if (anima) {
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis) {
+    window.lenis = new Lenis({ duration:1.15, smoothWheel:true });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  /* links internos com rolagem suave */
+  $$('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+    const alvo = a.getAttribute("href"); if (alvo.length < 2) return;
+    const el = document.querySelector(alvo); if (!el) return;
+    e.preventDefault(); if (window.lenis) lenis.scrollTo(el, { offset:-64 }); else el.scrollIntoView({ behavior:"smooth" });
+  }));
+
+  /* hero: letras do nome sobem */
+  $$(".h1 > span").forEach(l => { l.innerHTML = [...l.textContent].map(c => `<span class="lw"><span class="lt">${c}</span></span>`).join(""); });
+  gsap.from(".h1 .lt", { yPercent:110, duration:1.1, ease:"expo.out", stagger:.045, delay:.15 });
+  gsap.from([".yt-linha", ".tag", ".cta", ".nums", ".destaque"], { y:24, opacity:0, duration:.9, ease:"power3.out", stagger:.08, delay:.55 });
+  gsap.to(".hero-c", { yPercent:-18, opacity:.2, ease:"none", scrollTrigger:{ trigger:"#top", start:"top top", end:"bottom top", scrub:true } });
+
+  /* os 4 elementos: o anel inspira e expira com a rolagem */
+  const els = $$(".el"), barras = $$(".resp-barra b"), anel = $("#anel"), fase = $("#fase"), fim = $(".resp-fim");
+  ScrollTrigger.create({
+    trigger:"#elementos", start:"top top", end:"+=" + (celular() ? 280 : 340) + "%", pin:".resp-pin", scrub:true,
+    onUpdate: st => {
+      const p = st.progress * 1.08, seg = Math.min(3, Math.floor(p * 4)), s = Math.min(1, p * 4 - seg);
+      const resp = Math.sin(Math.min(1, s) * Math.PI);             /* 0 -> 1 -> 0 dentro de cada elemento */
+      const fimP = Math.max(0, (st.progress - .9) / .1);
+      anel.style.transform = `translate(-50%,-50%) scale(${.55 + resp * .55 + fimP * .25})`;
+      anel.style.opacity = 1 - fimP * .5;
+      fase.textContent = s < .5 ? "Inspira" : "Expira";
+      fase.style.opacity = 1 - fimP;
+      els.forEach((el, i) => {
+        const o = i === seg ? Math.min(1, resp * 1.8) * (1 - fimP) : 0;
+        el.style.opacity = o; el.style.transform = `translateY(${(1 - Math.min(1, resp * 1.8)) * (s < .5 ? 30 : -30)}px)`;
+      });
+      barras.forEach((b, i) => b.style.transform = `scaleX(${Math.max(0, Math.min(1, p * 4 - i))})`);
+      fim.style.opacity = fimP;
+    }
+  });
+
+  /* sobre: a foto abre como uma respiração + nomes das artes andando */
+  gsap.to("#foto-r", { clipPath:"circle(75% at 50% 42%)", ease:"none", scrollTrigger:{ trigger:"#sobre", start:"top 85%", end:"top 15%", scrub:true } });
+  gsap.fromTo("#foto-r img", { yPercent:-8 }, { yPercent:0, ease:"none", scrollTrigger:{ trigger:"#foto-r", start:"top bottom", end:"bottom top", scrub:true } });
+  gsap.fromTo("#artes-t", { xPercent:5 }, { xPercent:-45, ease:"none", scrollTrigger:{ trigger:".artes", start:"top bottom", end:"bottom top", scrub:true } });
+
+  /* cards: o baralho abre em leque com a rolagem */
+  const cartas = $$(".carta"), nC = cartas.length;
+  const leque = p => {
+    const m = celular();
+    cartas.forEach((c, i) => {
+      const d = i - (nC - 1) / 2;
+      const ang = d * (m ? 11 : 13) * p, x = d * (m ? 34 : 70) * p, y = Math.abs(d) * (m ? 9 : 16) * p - p * 10, z = -Math.abs(d) * 20 * p;
+      c.style.transform = `translate3d(${x}px,${y + (1 - p) * i * -3}px,${z}px) rotate(${ang + (1 - p) * (i % 2 ? 3 : -3)}deg)`;
+    });
+  };
+  leque(0);
+  ScrollTrigger.create({ trigger:"#cards-g", start:"top 75%", end:"center 45%", scrub:.6, onUpdate: st => leque(st.progress) });
+
+  /* institucional: o vídeo cresce até ocupar a largura */
+  gsap.to("#video-inst", { scale:1, borderRadius:6, ease:"none", scrollTrigger:{ trigger:"#video-inst", start:"top 92%", end:"top 25%", scrub:true } });
+
+  /* revelar o resto */
+  $$(".rv").forEach(el => gsap.to(el, { opacity:1, y:0, duration:.9, ease:"power3.out", scrollTrigger:{ trigger:el, start:"top 90%", once:true } }));
+  addEventListener("load", () => ScrollTrigger.refresh());
+} else {
+  $("#elementos").classList.add("estatico");
+  $("#foto-r").style.clipPath = "none";
+  $("#video-inst").style.transform = "none";
+  $$(".carta").forEach((c, i) => { const d = i - 2.5; c.style.transform = `translate(${d * (celular() ? 34 : 70)}px,${Math.abs(d) * 12}px) rotate(${d * 12}deg)`; });
+}
+</script>
+
+<!-- ---------- HERO 3D: urso em medalhão com os cards orbitando ---------- -->
+<script type="module">
+const canvas = document.getElementById("cena");
+const semGL = () => document.documentElement.classList.add("sem-3d");
+const reduz = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let gl = null;
+try { gl = canvas.getContext("webgl2") || canvas.getContext("webgl"); } catch (e) {}
+if (!gl || reduz) { semGL(); }
+else {
+  try {
+    const THREE = await import("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js");
+    const mob = () => innerWidth < 900;
+    const renderer = new THREE.WebGLRenderer({ canvas, context:gl, antialias:true, alpha:true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, mob() ? 1.5 : 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    const cena = new THREE.Scene();
+    const cam = new THREE.PerspectiveCamera(34, 1, .1, 100);
+    cam.position.set(0, 0, 13);
+
+    cena.add(new THREE.AmbientLight(0xffffff, .55));
+    const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(-3, 4, 6); cena.add(key);
+    const rim = new THREE.PointLight(0xe01f27, 30, 20); rim.position.set(3.5, -1, 3); cena.add(rim);
+
+    const carrega = url => new Promise(res => new THREE.TextureLoader().load(url, t => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; res(t); }, undefined, () => res(null)));
+    const [urso, ...cartasT] = await Promise.all(["assets/bear.png","assets/cards/card-01.jpg","assets/cards/card-04.jpg","assets/cards/card-22.jpg","assets/cards/card-41.jpg","assets/cards/card-47.jpg","assets/cards/card-53.jpg"].map(carrega));
+    if (!urso) throw new Error("sem textura");
+
+    /* medalhão: disco com o urso na frente e borda vermelha metálica */
+    const grupo = new THREE.Group(); cena.add(grupo);
+    const med = new THREE.Group(); grupo.add(med);
+    const R = 1.75;
+    const frente = new THREE.MeshStandardMaterial({ map:urso, transparent:true, roughness:.55, metalness:.1 });
+    const borda = new THREE.MeshStandardMaterial({ color:0xb3121a, roughness:.32, metalness:.75 });
+    const disco = new THREE.Mesh(new THREE.CylinderGeometry(R, R, .34, 96, 1, false), [borda, frente, new THREE.MeshStandardMaterial({ color:0x1a2233, roughness:.6 })]);
+    disco.rotation.x = Math.PI / 2;
+    urso.center.set(.5, .5); urso.rotation = Math.PI;   /* a tampa do cilindro gira a textura: corrige */
+    med.add(disco);
+    const aro = new THREE.Mesh(new THREE.TorusGeometry(R + .02, .07, 24, 128), borda); med.add(aro);
+    /* anel que respira em volta */
+    const anelM = new THREE.MeshBasicMaterial({ color:0xe01f27, transparent:true, opacity:.55 });
+    const anel = new THREE.Mesh(new THREE.TorusGeometry(R + .55, .012, 8, 160), anelM); med.add(anel);
+    const anel2 = new THREE.Mesh(new THREE.TorusGeometry(R + .95, .006, 8, 160), new THREE.MeshBasicMaterial({ color:0xffffff, transparent:true, opacity:.12 })); med.add(anel2);
+
+    /* órbita dos cards */
+    const orbita = new THREE.Group(); grupo.add(orbita);
+    const cartas = [];
+    const nCartas = mob() ? 8 : 12, raio = 3.9;
+    const geo = new THREE.PlaneGeometry(1.05, 1.53);
+    for (let i = 0; i < nCartas; i++) {
+      const t = cartasT[i % cartasT.length];
+      const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ map:t, side:THREE.DoubleSide, transparent:true }));
+      const a = i / nCartas * Math.PI * 2;
+      m.userData = { a, h:(Math.random() - .5) * .5, v:.6 + Math.random() * .6 };
+      orbita.add(m); cartas.push(m);
+    }
+    orbita.rotation.set(.38, 0, -.16);
+
+    /* poeira de luz */
+    const nP = mob() ? 120 : 260, pos = new Float32Array(nP * 3);
+    for (let i = 0; i < nP; i++) { pos[i*3] = (Math.random() - .5) * 18; pos[i*3+1] = (Math.random() - .5) * 11; pos[i*3+2] = (Math.random() - .5) * 8 - 2; }
+    const pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    const poeira = new THREE.Points(pg, new THREE.PointsMaterial({ color:0xff6a70, size:.035, transparent:true, opacity:.55 }));
+    cena.add(poeira);
+
+    let W = 0, H = 0, baseY = .55;
+    const meiaAltura = Math.tan(THREE.MathUtils.degToRad(17)) * 13;    /* metade da altura visível no plano z=0 */
+    const ajusta = () => {
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      renderer.setSize(W, H, false); cam.aspect = W / H; cam.updateProjectionMatrix();
+      if (mob()) {
+        /* celular: o urso ocupa o espaço livre entre o cabeçalho e a primeira linha do texto */
+        const pxU = H / (2 * meiaAltura);
+        const topoTxt = document.querySelector(".yt-linha").getBoundingClientRect().top + scrollY - canvas.getBoundingClientRect().top - scrollY;
+        const cimaPx = 74, livre = Math.max(80, topoTxt - cimaPx - 10);
+        const esc = Math.max(.36, Math.min(.62, (livre / 2) / (pxU * 2.1)));
+        baseY = meiaAltura - (cimaPx + livre / 2) / pxU;
+        grupo.position.set(0, baseY, 0); grupo.scale.setScalar(esc);
+      } else { baseY = .55; grupo.position.set(3.7, baseY, 0); grupo.scale.setScalar(W < 1250 ? .78 : .92); }
+    };
+    addEventListener("resize", ajusta); ajusta();
+
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive:true });
+
+    let visivel = true;
+    new IntersectionObserver(([e]) => visivel = e.isIntersecting).observe(canvas);
+    const relogio = new THREE.Clock();
+    const base = { x:0, y:0 };
+    const quadro = () => {
+      requestAnimationFrame(quadro);
+      if (!visivel) return;
+      const t = relogio.getElapsedTime();
+      const p = Math.min(1, Math.max(0, scrollY / (H || innerHeight)));   /* 0 no topo, 1 quando o hero sai */
+      rx += (my * .35 - rx) * .05; ry += (mx * .55 - ry) * .05;
+      const resp = Math.sin(t * .9);                                       /* respiração lenta */
+      med.rotation.set(rx + p * .5, ry + Math.sin(t * .35) * .18 + p * 1.4, 0);
+      med.scale.setScalar((1 + resp * .025) * (1 - p * .35));
+      anel.scale.setScalar(1 + resp * .06 + p * .6); anelM.opacity = .55 * (1 - p);
+      anel2.scale.setScalar(1 - resp * .03 + p * .9);
+      orbita.rotation.y = t * .12 + p * 2.2;
+      const rr = raio * (1 + p * 1.25);
+      cartas.forEach(m => {
+        const u = m.userData, a = u.a;
+        m.position.set(Math.cos(a) * rr, u.h + Math.sin(t * u.v + a) * .14 + p * (u.h > 0 ? 2.4 : -2.4), Math.sin(a) * rr);
+        m.rotation.y = -a + Math.PI / 2 + Math.sin(t * .5 + a) * .15;
+        m.rotation.z = Math.sin(t * .4 + a) * .08;
+        m.material.opacity = 1 - p * .9;
+      });
+      poeira.rotation.y = t * .02; poeira.position.y = -p * 1.5;
+      grupo.position.y = baseY + p * 1.2;
+      renderer.render(cena, cam);
+    };
+    quadro();
+  } catch (err) { console.warn("3D desligado:", err.message); semGL(); }
+}
+</script>
+</body>
+</html>
